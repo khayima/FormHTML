@@ -1,0 +1,105 @@
+# FormHTML
+Minimalist desain for HTML beginner, with simply HTML syntax
+
+<!DOCTYPE html>
+
+<!-- HTML form digunakan untuk menyimpan masukan dari pengguna. Input akan dikirimkan ke server untuk diproses -->
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+
+<body>
+ <!-- <form></form> elemen digunakan untuk membuat form HTML sebagai masukan bagi pengguna -->
+ <!-- <form></form> elemen yang terdiri dari : text fields, checkboxes, radio buttons, submit buttons, etc. -->
+
+ <!-- GET Method:
+  1. Berdasarkan formulir data ke URL, dalam name/value
+  2. JANGAN PERNAH menggunakan GET untuk mengirim data  (the submitted form data is visible in the URL!)
+  3. Panjang dari URL terbatas (2048)
+  4. Berguna untuk submission form dimana sebuah pengguna ingin untuk bookmark suatu hasil
+  5. GET baik untuk non-secure data, seperti query dalam bentuk string di google -->
+
+  <!-- POST Method:
+  1. Form data bergantung pada body HTTP request (pengumpulan form data tidak ditampilkan dalam URL)
+  2. POST tidak memiliki limit , dan bisa digunakan untuk mengirim semua data dalam jumlah besar
+  3. Form submissions dengan POST tidak dapat di bookmarked
+  -->
+ <form action="/action_page.php" autocomplate="on" method="post"> <!-- Tempat yg digunakan untuk menyimpan isi form setelah dilakukan <action> submit -->
+ <!-- <input> elemen digunakan untuk elemen, ditampilkan dalam berbagai macam cara, bergantung pada tipe atribut -->
+ <label for="fname"> First Name: </label><br>
+ <!-- <input type="text"> ditampilkan sebagai input text dalam satu single-line -->
+ <input type="text" id="fname" name="fname"> <br>
+ <label for="Iname"> Last Name: </label><br>
+ <input type="text" id="Iname" name="Iname"><br>
+ <!-- <input type="radio"> ditampilkan sebagai radio button , untuk memilih satu dari sekian banyak pilihan -->
+ <p>Choose Your Gender : </p>
+ <input type="radio" id="Female" name="gender" value="FEMALE">
+ <label for="Female"> Female </label><br>
+ <input type="radio" id="Male" name="gender" value="MALE">
+ <label for="Male"> Male </label><br>
+
+ <!-- <input type="checkbox"> digunakan untuk membuat input dalam bentuk cek kotak (untuk tidak memilih atau memilih lebih dari satu pilihan) -->
+ <p> Choose your status : </p>
+ <input type="checkbox" id="Single" name="single" value="Single">
+ <label for="Single"> Single</label><br>
+ <input type="checkbox" id="Marriage" name="Marriage" value="Marriage">
+ <label for="Marriage"> Marriage</label><br>
+
+ <!-- <input type="submit"> digunakan untuk menampilkan tombol submit (untuk mengumpulkan form) -->
+ <!--<input type="submit" value="Submit">-->
+ <!-- <input type="button"> digunakan untuk menampilkan button yang bisa diklik -->
+
+ <!-- Autocomplete Attribute, digunakan untuk membuat autocomplate otomatis saat "ON" berdasarkan data yg diinput sebelumnya -->
+ 
+ <!-- <select></select> elemen digunakan untuk membuat pilihan berupa drop down list -->
+ <label for="Buku"> Choose your book:</label><br>
+ <select id="Buku" name="Buku">
+  <option value="Ekonomi">Ekonomi</option>
+  <option value="Fiksi">Fiksi</option>
+  <option value="Keagamaan">Keagamaan</option>
+  <option value="Bisnis">Bisnis</option>
+  <option value="Teknologi" selected>Teknologi</option> <!-- selected digunakan untuk memilih option sebagai display awal -->
+ </select>
+
+  <!-- Menampilkan option select 3 teratas dari ikon -->
+  <label for="Buku"> Choose your book:</label><br>
+ <select id="Buku" name="Buku" size="3"  multiple> <!-- Multiple digunakan untuk membuat user bisa memilih lebih dari satu pilihan -->
+  <option value="Ekonomi">Ekonomi</option>
+  <option value="Fiksi">Fiksi</option>
+  <option value="Keagamaan">Keagamaan</option>
+  <option value="Bisnis">Bisnis</option>
+  <option value="Teknologi" selected>Teknologi</option> <!-- selected digunakan untuk memilih option sebagai display awal -->
+ </select>
+
+ <textarea name="message" rows="10" cols="30">
+ </textarea>
+
+ <textarea name="message" style="width:200px;height:600px;">
+ Story...
+ </textarea>
+
+ <!-- <input type="color"> digunakan untuk memilih warna dan menyimpannya -->
+ <label for="favcolor"> Select your color:</label><br>
+ <input type="color" id="favcolor" name="favcolor"> <br>
+
+ <!-- <input type="date"> digunakan untuk memilih tanggal dan menyimpannya -->
+ <label for="birthday"> Birthday: </label><br>
+ <input type="date" id="birthday" name="birthday"> <br>
+
+ <!-- Fungsi untuk menginput tanggal sebelum tahun 1980 -->
+ <label for="datemax"> Enter a date before 1980-01-01:</label><br>
+ <input type="date" id="datemax" name="datemax" max="1979-12-31"><br><br>
+
+ <!-- Fungsi untuk menginput tanggal setelah suatu tahun -->
+ <label for="datemin">Enter a date after 2000-01-01:</label><br>
+ <input type="date" id="datemin" name="datemin" min="2000-01-02">
+
+
+ <button type="button" onclick="alert('Data Saved')">Click Me!</button>
+ <input type="submit" value="Submit">
+ </form>
+</body>
+</html>
